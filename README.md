@@ -1,9 +1,11 @@
+```
  __      __      ___.  __________                            
 /  \    /  \ ____\_ |__\______   \ ____   ____  ____   ____  
 \   \/\/   // __ \| __ \|       _// __ \_/ ___\/  _ \ /    \ 
  \        /\  ___/| \_\ \    |   \  ___/\  \__(  <_> )   |  \
   \__/\  /  \___  >___  /____|_  /\___  >\___  >____/|___|  /
        \/       \/    \/       \/     \/     \/           \/ 
+```
 
 WebRecon is a tool for conducting basic automated reconnaissance against websites. Built on the sholders of giants, WebRecon uses multiple tools to conduct subdomain enumeration, web host identification, directory enumeration/bruteforcing, port scanning, potential exploit identification, and identification of potentially interesting information.
 
