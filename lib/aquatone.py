@@ -16,12 +16,10 @@ def aquatone():
 
                 os.chdir(str(domain + '/aquatone'))
 
-                subprocess.call(('echo %s > url & cat url | aquatone -ports small -silent' % domain), shell=True)
+                subprocess.call(('echo %s > url & cat url | aquatone -ports small -silent' % (domain)), shell=True)
 
                 print('[ + ] Completed aquatone scan for %s' % (domain))
                 print('[ + ] Results can be found at out/%s/aquatone/' % (domain))
-
-                os.remove('urls')
 
                 os.chdir('../../')
             except:
