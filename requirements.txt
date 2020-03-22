@@ -2,4 +2,4 @@ os
 subprocess
 sys
 getopt
-python-nmap
+shutil
