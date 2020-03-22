@@ -15,18 +15,18 @@ A big thanks is owed to @tomnomnom, @Fyodor, @offensive-security, and @michenrik
 
 The following languages and tools are required to run WebRecon.
 
-Languages:
-  Go
+Languages:  
+  Go  
   Python => 2.7
 
-Tools:
-  Nmap            https://nmap.org/download.html
-  assetfinder     https://github.com/tomnomnom/assetfinder
-  httprobe        https://github.com/tomnomnom/httprobe
-  meg             https://github.com/tomnomnom/meg
-  gf              https://github.com/tomnomnom/gf
-  searchsploit    https://github.com/offensive-security/exploitdb
-  aquatone        https://github.com/michenriksen/aquatone
+Tools:  
+  Nmap: https://nmap.org/download.html  
+  assetfinder: https://github.com/tomnomnom/assetfinder  
+  httprobe: https://github.com/tomnomnom/httprobe  
+  meg: https://github.com/tomnomnom/meg  
+  gf: https://github.com/tomnomnom/gf  
+  searchsploit: https://github.com/offensive-security/exploitdb  
+  aquatone: https://github.com/michenriksen/aquatone  
 
 # Install
 
