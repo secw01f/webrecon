@@ -9,7 +9,7 @@
 
 WebRecon is a tool for conducting basic automated reconnaissance against websites. Built on the sholders of giants, WebRecon uses multiple tools to conduct subdomain enumeration, web host identification, directory enumeration/bruteforcing, port scanning, potential exploit identification, and identification of potentially interesting information.
 
-A big thanks is owed to @tomnomnom, @Fyodor, @offensive-security, and @michenriksen for creating the underlying tools that make this piece of autmation useful.
+A big thanks is owed to @tomnomnom, @Fyodor, @offensive-security, and @michenriksen for creating the underlying tools that make this piece of automation useful.
 
 # Requirements
 
