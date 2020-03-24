@@ -16,7 +16,8 @@ def aquatone():
 
                 os.chdir(str(domain + '/aquatone'))
 
-                subprocess.call(('echo %s > url & cat url | aquatone -ports small -silent' % (domain)), shell=True)
+                with open(os.devnull, 'w') as out:
+                    subprocess.call(('echo %s > url & cat url | aquatone -ports small -silent' % (domain)), shell=True, stderr=out)
 
                 print('[ + ] Completed aquatone scan for %s' % (domain))
                 print('[ + ] Results can be found at out/%s/aquatone/' % (domain))
