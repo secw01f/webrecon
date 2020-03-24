@@ -14,28 +14,31 @@ def grepfor():
             try:
                 os.mkdir(domain + '/gf')
                 os.mkdir('gf')
+                os.chdir(domain)
 
-                with open('list', 'w') as paterns:
+                with open('../list', 'w') as paterns:
                     subprocess.call('gf -list', shell=True, stdout=paterns)
                     paterns.close()
 
-                with open('list', 'r') as paternlist:
+                with open('../list', 'r') as paternlist:
                     paterns = paternlist.readlines()
                     paternlist.close()
 
                 for patern in paterns:
-                    outfile = str('gf/' + patern)
+                    outfile = str('../gf/' + patern)
                     with open(outfile, 'w') as file:
                         with open(os.devnull, 'w') as out:
-                            subprocess.call(str('gf ' + patern + str(domain + '/')), shell=True, stdout=file, stderr=out)
+                            subprocess.call(str('gf ' + patern), shell=True, stdout=file, stderr=out)
                         file.close()
 
                 for patern in paterns:
-                    shutil.copy(('gf/' + patern), (domain + '/gf/' + patern))
+                    shutil.copy(('../gf/' + patern), ('./gf/' + patern))
 
-                shutil.rmtree('gf/')
+                shutil.rmtree('../gf')
 
-                os.remove('list')
+                os.remove('../list')
+
+                os.chdir('../')
 
                 print('[ + ] Completed greping for interesting information!')
                 print('[ + ] Results can be found under out/%s/gf' % (domain))
@@ -43,7 +46,7 @@ def grepfor():
                 print('[ - ] No grep completed for %s' % (domain))
                 print('[ - ] Skipping grep for %s' % (domain))
 
-                os.remove('list')
-                shutil.rmtree('gf')
+                os.remove('../list')
+                shutil.rmtree('../gf')
 
     os.chdir('../')
