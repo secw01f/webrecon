@@ -75,7 +75,7 @@ def main():
     banner()
     print('\n')
 
-    if len(Output) > 0:
+    if len(Output) != 0:
         os.makedirs(Output)
     else:
         pass
@@ -83,7 +83,10 @@ def main():
     if len(Subdomains) == 0:
         print('[ + ] Enumerating subdomains for %s' % (Domain))
 
-        os.chdir(Output)
+        if len(Output) != 0:
+            os.chdir(Output)
+        else:
+            pass
 
         subdomain.assetfinder(Domain)
     else:
@@ -91,7 +94,10 @@ def main():
         with open(Subdomains, 'r') as subs:
             list = subs.readlines()
 
-            os.chdir(Output)
+            if len(Output) != 0:
+                os.chdir(Output)
+            else:
+                pass
 
             with open('subs', 'w') as newsubs:
                 for x in list:
