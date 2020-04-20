@@ -23,7 +23,10 @@ def assetfinder(domain):
     except:
         print('[ERROR] Subdomains were not enumerated. Verify the domain is valid.')
 
-        os.remove('subs')
+        try:
+            os.remove('subs')
+        except:
+            pass
 
         sys.exit()
 
@@ -48,7 +51,7 @@ def httprobe():
     except:
         print('[ - ] No hosts were identified')
         print('[ - ] Exiting...')
-        
+
         os.remove('hosts')
 
         sys.exit()
