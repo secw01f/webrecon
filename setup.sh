@@ -9,7 +9,8 @@ echo "[ + ] Nmap installation complete"
 echo "[ ! ] Installing go"
 cd ~/Downloads && wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.14.2.linux-amd64.tar.gz
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
+echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc
+echo "export PATH=\$PATH:~/go/bin" >> ~/.bashrc
 source ~/.bashrc
 cd ~
 echo "[ + ] Go installation complete"
