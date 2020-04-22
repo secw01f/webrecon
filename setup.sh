@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 
 sudo pip install -r requirements.txt
 
