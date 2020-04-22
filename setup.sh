@@ -1,6 +1,7 @@
 #!/bin/bash -i
 
-sudo pip install -r requirements.txt
+sudo apt install python3-pip
+sudo pip3 install -r requirements.txt
 
 echo "[ ! ] Installing nmap"
 sudo apt-get install nmap
@@ -21,6 +22,7 @@ go get github.com/tomnomnom/httprobe
 go get github.com/tomnomnom/meg
 go get github.com/tomnomnom/gf
 go get github.com/michenriksen/aquatone
+source ~/.bashrc
 echo "[ + ] Assetfinder, httprobe, meg, gf, and aquatone installation complete"
 
 echo "[ ! ] Installing searchsploit"
