@@ -40,3 +40,5 @@ In order to install the tools required for WebRecon, please follow the steps bel
   2. cd webrecon
   3. chmod +x setup.sh
   4. ./setup.sh
+  5. Open a new terminal
+  6. Navigate to your WebRecon installation and run the tool
