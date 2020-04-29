@@ -25,14 +25,14 @@ def grepfor():
                     paternlist.close()
 
                 for patern in paterns:
-                    outfile = str('../gf/' + patern)
+                    outfile = str('../gf/' + patern.rstrip())
                     with open(outfile, 'w') as file:
                         with open(os.devnull, 'w') as out:
-                            subprocess.call(str('gf ' + patern), shell=True, stdout=file, stderr=out)
+                            subprocess.call(str('gf ' + patern.rstrip()), shell=True, stdout=file, stderr=out)
                         file.close()
 
                 for patern in paterns:
-                    shutil.copy(('../gf/' + patern), ('./gf/' + patern))
+                    shutil.copy(('../gf/' + patern.rstrip()), ('./gf/' + patern.rstrip()))
 
                 shutil.rmtree('../gf')
 
