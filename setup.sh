@@ -22,7 +22,9 @@ go get github.com/tomnomnom/httprobe
 go get github.com/tomnomnom/meg
 go get github.com/tomnomnom/gf
 go get github.com/michenriksen/aquatone
+echo "source ~/go/src/github.com/tomnomnom/gf/gf-completion.bash" >> ~/.bashrc
 source ~/.bashrc
+cp -r ~/go/src/github.com/tomnomnom/gf/examples ~/.gf
 echo "[ + ] Assetfinder, httprobe, meg, gf, and aquatone installation complete"
 
 echo "[ ! ] Installing searchsploit"
