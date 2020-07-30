@@ -9,6 +9,8 @@ Output = ''
 Domain = ''
 Directory = '/'
 Subdomains = ''
+SearchSkip = False
+PortSkip = False
 
 def banner():
     print(' __      __      ___.  __________                             ')
@@ -26,10 +28,12 @@ def usage():
     print('Usage:')
     print('')
     print('Optional:')
-    print('-h   help       Prints this usage message')
-    print('-o   output     Name of the directory you would like created and have output stored (Default: current directory)')
-    print('-D   direnum    Single directory or file of directories to enumerate agains identified hosts (Default: / "root directory")')
-    print('-s   subs       Skips subdomain enumeration and uses defined file of subdomains')
+    print('-h   help          Prints this usage message')
+    print('-o   output        Name of the directory you would like created and have output stored (Default: current directory)')
+    print('-D   direnum       Single directory or file of directories to enumerate agains identified hosts (Default: / "root directory")')
+    print('-s   subs          Skips subdomain enumeration and uses defined file of subdomains')
+    print('-sS  skip-search   Skips searchsploit search')
+    print('-sP  skip-port     Skips port scan (Searchsploit search will also be skipped)')
     print('')
     print('Required:')
     print('-d   domain     Domain in which to conduct reconnaissance against')
@@ -47,13 +51,15 @@ def main():
     global Domain
     global Directory
     global Subdomains
+    global SearchSkip
+    global PortSkip
 
     if not sys.argv[1:]:
         usage()
         sys.exit()
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], 'ho:d:D:s:', ['help', 'output', 'domain', 'direnum'])
+        opts, args = getopt.getopt(sys.argv[1:], 'ho:d:D:s:SP"', ['help', 'output', 'domain', 'direnum', 'skip-search', 'skip-port'])
     except getopt.GetoptError as err:
         print(str(err))
         usage()
@@ -70,7 +76,12 @@ def main():
         elif o in ('-D', '--direnum'):
             Directory = a
         elif o in ('-s', '--subs'):
-                Subdomains = a
+            Subdomains = a
+        elif o in ('-S', '--skip-search'):
+            SearchSkip = True
+        elif o in ('-P', '--skip-port'):
+            PortSkip = True
+            SearchSkip = True
 
     banner()
     print('\n')
@@ -119,14 +130,20 @@ def main():
 
     grepfor.grepfor()
 
-    print('[ + ] Beginning nmap scanning for each host')
-    print('[ ! ] This may take some time!')
+    if PortSkip == False:
+        print('[ + ] Beginning nmap scanning for each host')
+        print('[ ! ] This may take some time!')
 
-    nmapscanner.nmapscan()
+        nmapscanner.nmapscan()
+    else:
+        pass
 
-    print('[ + ] Running nmap results through Searchsploit to possibly find some low hanging fruit')
+    if SearchSkip == False:
+        print('[ + ] Running nmap results through Searchsploit to possibly find some low hanging fruit')
 
-    searchsploit.searchsploit()
+        searchsploit.searchsploit()
+    else:
+        pass
 
     print('[ + ] Running aquatone scan to gather screenshots')
 
