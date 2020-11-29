@@ -7,9 +7,9 @@
        \/       \/    \/       \/     \/     \/           \/
 ```
 
-WebRecon is a tool for conducting basic automated reconnaissance against websites. Built on the sholders of giants, WebRecon uses multiple tools to conduct passive subdomain enumeration, web host identification, directory enumeration/bruteforcing, port scanning, potential exploit identification, and identification of potentially interesting information.
+WebRecon is a tool for conducting basic automated reconnaissance against websites. Built on the shoulders of giants, WebRecon uses multiple tools to conduct passive subdomain enumeration, web host identification, directory enumeration/bruteforcing, port scanning, potential exploit identification, and identification of potentially interesting information.
 
-A big thanks is owed to @tomnomnom, @Fyodor, @offensive-security, and @michenriksen for creating the underlying tools that make this piece of automation useful.
+A big thanks is owed to @tomnomnom, @OWASP, @Fyodor, @offensive-security, and @michenriksen for creating the underlying tools that make this piece of automation useful.
 
 # Requirements
 
@@ -22,6 +22,7 @@ Languages:
 Tools:  
   Nmap: https://nmap.org/download.html  
   assetfinder: https://github.com/tomnomnom/assetfinder  
+  AMASS: https://github.com/OWASP/Amass  
   httprobe: https://github.com/tomnomnom/httprobe  
   meg: https://github.com/tomnomnom/meg  
   gf: https://github.com/tomnomnom/gf  
@@ -34,7 +35,7 @@ Tools:
 
 In order to install the tools required for WebRecon, please follow the steps below:
 
-**(Note)** This is only the instructions for installing on Kali Linux. More platforms are on their way.
+**(Note)** This is only the instructions for installing on Kali Linux. More platforms will be added at a later time.
 
   1. git clone https://github.com/secw01f/webrecon
   2. cd webrecon
