@@ -4,22 +4,13 @@ import os
 
 def assetfinder(domain):
     try:
-        with open('subs', 'w') as subs:
+        with open('subs', 'a') as subs:
             subprocess.call(['assetfinder', '-subs-only', domain], stdout=subs)
 
-            print('[ + ] Subdomains enumerated!')
+            print('[ + ] Subdomains enumerated with assetfinder!')
 
             subs.close()
 
-        with open('subs', 'r') as subs:
-            count = 0
-            lines = subs.readlines()
-            for line in lines:
-                count += 1
-
-            subs.close()
-
-            print('[ + ] Found a total of %d subdomains' % (count))
     except:
         print('[ERROR] Subdomains were not enumerated. Verify the domain is valid.')
 
@@ -29,6 +20,16 @@ def assetfinder(domain):
             pass
 
         sys.exit()
+
+def amass(domain):
+    try:
+        with open(os.devnull, 'w') as file:
+            subprocess.call(str('amass enum -d ' + domain + ' -o subs'), shell=True, stdout=file, stderr=file)
+
+            print('[ + ] Subdomains enumerated with AMASS!')
+
+    except:
+        print('[ERROR] Subdomains were not enumerated. Verify the domain is valid.')
 
 def httprobe():
     try:

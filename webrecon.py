@@ -93,13 +93,35 @@ def main():
 
     if len(Subdomains) == 0:
         print('[ + ] Enumerating subdomains for %s' % (Domain))
+        print('[ ! ] This may take some time!')
 
         if len(Output) != 0:
             os.chdir(Output)
         else:
             pass
 
+        subdomain.amass(Domain)
         subdomain.assetfinder(Domain)
+
+        unique = ''
+
+        with open('subs', 'r') as subs:
+            unique = set(subs.readlines())
+            subs.close()
+
+        with open('subs', 'w') as subs:
+            subs.writelines(unique)
+            subs.close()
+
+        with open('subs', 'r') as subs:
+            count = 0
+            lines = subs.readlines()
+            for line in lines:
+                count += 1
+
+            subs.close()
+
+            print('[ + ] Found a total of %d subdomains' % (count))
     else:
         print('[ + ] Creating subs file with list from %s' % (Subdomains))
         with open(Subdomains, 'r') as subs:
