@@ -27,6 +27,10 @@ source ~/.bashrc
 cp -r ~/go/src/github.com/tomnomnom/gf/examples ~/.gf
 echo "[ + ] Assetfinder, httprobe, meg, gf, and aquatone installation complete"
 
+echo "[ ! ] Installing AMASS"
+sudo apt-get install amass
+echo "[ + ] AMASS installation complete"
+
 echo "[ ! ] Installing searchsploit"
 sudo apt -y install exploitdb
 echo "[ + ] Searchsploit installation complete"
