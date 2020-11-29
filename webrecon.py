@@ -22,7 +22,7 @@ def banner():
 
 def usage():
     banner()
-    print('Big thanks to @tomnomnom, @Fyodor, @offensive-security, and @michenriksen for creating the underlying tools')
+    print('Big thanks to @tomnomnom, @OWASP, @Fyodor, @offensive-security, and @michenriksen for creating the underlying tools')
     print('')
     print('')
     print('Usage:')
