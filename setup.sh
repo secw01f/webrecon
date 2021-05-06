@@ -59,3 +59,6 @@ sudo apt -y install exploitdb
 echo "[ + ] Searchsploit installation complete"
 
 echo "[ + ] All installations complete"
+
+echo "[ + ] Adding Executable permissions to wrS3subtakeover.sh"
+sudo chmod +x wrS3subtakeover.sh
