@@ -43,4 +43,6 @@ echo "[ ! ] Installing SearchSploit"
 sudo apt -y install exploit-db
 echo "[ + ] SearchSploit installation complete"
 
+sudo chmod +x wrS3subtakeover.sh
+
 echo "[ + ] All installations complete"
