@@ -20,14 +20,14 @@ GO111MODULE=off go get github.com/michenriksen/aquatone
 
 if test -f ~/.bashrc;
 then
-    echo "$(find ~/go/pkg/mod/github.com/tomnomnom/ -name gf-completion.bash)" >> ~/.bashrc
+    echo "source $(find ~/go/pkg/mod/github.com/tomnomnom/ -name gf-completion.bash)" >> ~/.bashrc
     source ~/.bashrc
 fi
 
 if test -f ~/.zshrc;
 then
 
-    echo "$(find ~/go/pkg/mod/github.com/tomnomnom/ -name gf-completion.zsh)" >> ~/.zshrc
+    echo "source $(find ~/go/pkg/mod/github.com/tomnomnom/ -name gf-completion.zsh)" >> ~/.zshrc
     source ~/.zshrc
 fi
 
