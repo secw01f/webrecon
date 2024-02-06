@@ -24,7 +24,7 @@ def assetfinder(domain):
 def amass(domain):
     try:
         with open(os.devnull, 'w') as file:
-            subprocess.call(str('amass enum -d ' + domain + ' -o subs'), shell=True, stdout=file, stderr=file)
+            subprocess.call(str('amass enum -d ' + domain + ' -o subs -nocolor'), shell=True, stdout=file, stderr=file)
 
             print('[ + ] Subdomains enumerated with AMASS!')
 
